@@ -26,13 +26,21 @@ def analyze_excel(file_path):
             minimum = column_data.min()
             maximum = column_data.max()
             median = column_data.median()
+            std_dev = column_data.std()
+            variance = column_data.var()
+            skewness = column_data.skew()
             total_entries = column_data.count()
+
 
             print(f"Statistikk for {col}:")
             print(f"AVG: {avg:.2f}")
             print(f"Min: {minimum}")
             print(f"Max: {maximum}")
             print(f"Median: {median}")
+            print(f"Standard dev: {std_dev:.2f}")
+            print(f"varians: {variance:.2f}")
+            print(f"skewness: {skewness:.2f}")
+
             print(f"Total entries: {total_entries}")
             print(f"-"*30)
         else:
@@ -46,7 +54,7 @@ def analyze_excel(file_path):
         print(f"Antall rader der batcur er lik 0: {batcur_count_0}")
         print(f"Antall rader der batcur er lik -1: {batcur_count_minus_1}")
 
-file_path = "MR102.xlsx"
+file_path = "AA018.xlsx"
 
 analyze_excel(file_path)
 
